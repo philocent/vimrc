@@ -1,12 +1,13 @@
 set nocompatible "오리지날 VI와 호환하지 않음"
 set number "라인 보여주기"
 set hlsearch "highlight search"
-set ignorecase "검색 시 대문자, 소문자 구별 안함"
-set autoindent "자동 들여쓰기"
+set ignorecase "검색 시 대문자, 소문자 구별 안함" set autoindent "자동 들여쓰기"
 set cindent "C 프로그래밍용 자동 들여쓰기"
 set smartindent "스마트 indent"
 set nobackup "백업파일 만들지 않음"
 set incsearch "점진적 검색"
+set nocursorcolumn "Highlight current column"
+set nocursorline "Highlight current line"
 
 " Tab 길이 모두 4
 set tabstop=4
@@ -35,6 +36,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'tfnico/vim-gradle'
 Plugin 'Raimondi/delimitmate'
+Plugin 'shougo/denite.nvim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'klen/python-mode'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'benmills/vimux'
 
 call vundle#end()
 filetype plugin indent on
@@ -72,3 +79,17 @@ nmap <leader>T :enew<cr>
 
 " delimimate
 let delimitMate_expand_cr = 1
+
+" tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-/> :TmuxNavigatePrevious<cr>
+
+" python-mode
+
+" vimux
+map <Leader>vt :VimuxPromptCommand<CR>
